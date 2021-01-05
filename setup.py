@@ -1,0 +1,1 @@
+from coviddashboard import app
