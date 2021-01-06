@@ -1,14 +1,19 @@
-.flex-container {
+.container-1 {
+  margin: 0 1%;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+
+  /* flex-flow: row wrap;
+  justify-content: space-around; */
 }
 
-.uk-column .main-graph {
-  margin: 0 auto;
-  flex: 75%;
+/* .uk {
+  grid-column: 1;
 }
 
-.uk-column .right {
-  flex: 25%;
+.france {
+  grid-column: 2;
+} */
+
+.column-title {
+  margin-top: 20px;
 }

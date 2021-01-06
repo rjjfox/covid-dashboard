@@ -15,6 +15,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- css stylesheet -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
 
 </head>
@@ -38,50 +40,50 @@
         </div>
     </nav>
 
-    <!--middle section-->
-    <div class="container-fluid flex-container">
-        <div class="row">
+    <!--main section-->
+    <div class="container-1">
 
-            <!--UK column-->
-            <div class="col uk-column">
+        <!--uk column-->
+        <div class='uk'>
 
-                <!--Column title-->
-                <div class="mt-3 ml-2">
-                    <h2>UK Coronavirus Situation</h2>
-                    <h4 class="text-muted">Infection rates and trends</h4>
-                </div>
-                
-                <div class="container flex-container">
-                    <!-- Charts -->
-                    <div class="main-graph">
-                        
-                        <div id="charts" class="mt-3 text-center">
-                            <div class="row container-fluid">
-                                <div>
-                                    <div id="{{ids[0]}}"></div>
-                                </div>
+            <!--column title-->
+            <div class='column-title'>
+                <h2>UK Coronavirus Situation</h2>
+                <h4>Infection rates and trends</h4>
+            </div>
+            
+            <div>
+                <!-- Charts -->
+                <div class="main-graph">
+                    
+                    <div id="charts">
+                        <div class="row">
+                            <div>
+                                <div id="{{ids[0]}}"></div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Number stats -->
-                    <div class="right">
-                        <div class="row">
-                            <p>{{ current_moving_average }}</p>
-                        </div>  
-                    </div>
+                <!-- Number stats -->
+                <div>
+                    <div>
+                        <p>{{ current_moving_average }}</p>
+                    </div>  
                 </div>
             </div>
 
-            <!--France column-->
-            <div class="col">
-                <div id="middle-info" class="mt-3 ml-2">
-                    <h2 id="tag-line">France Coronavirus Situation</h2>
-                    <h4 id="tag-line" class="text-muted">Infection rates and trends</h4>
-                </div>
-            </div>
         </div>
-    </div>
+
+        <!--France column-->
+        <div class="france">
+            <!--column title-->
+            <div class='column-title'>
+                <h2>France Coronavirus Situation</h2>
+                <h4>Infection rates and trends</h4>
+            </div>
+
+        </div>
     </div>
     <!--footer section-->
     <div id="footer" class="container"></div>
