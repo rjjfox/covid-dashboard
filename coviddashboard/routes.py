@@ -15,7 +15,7 @@ def index():
     current_moving_average = get_current_moving_average()
 
     # plot ids for the html id tag
-    ids = ["figure-{}".format(i) for i, _ in enumerate(figures)]
+    ids = [f"figure-{i}" for i, _ in enumerate(figures)]
 
     # Convert the plotly figures to JSON for javascript in html template
     figuresJSON = json.dumps(figures, cls=plotly.utils.PlotlyJSONEncoder)

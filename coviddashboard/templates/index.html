@@ -54,23 +54,10 @@
             
             <div>
                 <!-- Charts -->
-                <div class="main-graph">
-                    
-                    <div id="charts">
-                        <div class="row">
-                            <div>
-                                <div id="{{ids[0]}}"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="{{ids[0]}}"></div>
 
                 <!-- Number stats -->
-                <div>
-                    <div>
-                        <p>{{ current_moving_average }}</p>
-                    </div>  
-                </div>
+                <p>{{ current_moving_average }}</p>
             </div>
 
         </div>
@@ -97,12 +84,16 @@
         // plots the figure with id
         // id much match the div id above in the html
         var figures = {{ figuresJSON | safe }};
-        var ids = {{ids | safe}};
+        var ids = {{ ids | safe }};
         for (var i in figures) {
-            Plotly.plot(ids[i],
+            Plotly.newPlot(ids[i],
                 figures[i].data,
-                figures[i].layout || {});
+                figures[i].layout|| {});
         }
+
+        // window.onresize = function () {
+        //     for (var i in figures) {Plotly.Plots.resize(ids[i]);}
+        // }
     </script>
 
 </footer>

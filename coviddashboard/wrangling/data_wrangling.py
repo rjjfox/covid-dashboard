@@ -72,23 +72,13 @@ def return_figures():
                 # "xanchor": "left",
                 # "x": 0.1,
                 "font": {"family": "Roboto", "size": 18},
-            },
-            "legend": {},
-            # "width": 800,
-            # "height": 500,
+                # "autosize": True,
+            }
         }
     )
 
-    # fig.add_trace(
-    #     go.Scatter(
-    #         x=df.date, y=df["7dayCases"], mode="lines", name="7 day moving average"
-    #     )
-    # )
-
     figures = []
     figures.append(dict(data=graph, layout=layout))
-
-    # graphJSON = dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
     return figures
 
