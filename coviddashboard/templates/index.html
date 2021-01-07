@@ -1,102 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UK Covid 19 Situation</title>
 
-    <title>UK Covid 19 Situation</title>
+  <!--import script files needed from plotly and bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <!--import script files needed from plotly and bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-    <!-- css stylesheet -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
-
+  <!-- css stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}" />
 </head>
 
 <body>
+  <!--navbar links-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#">UK Covid 19 Situation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!--navbar links-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="#">UK Covid 19 Situation</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://coronavirus.data.gov.uk/details/developers-guide">Data</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!--main section-->
-    <div class="container-1">
-
-        <!--uk column-->
-        <div class='uk'>
-
-            <!--column title-->
-            <div class='column-title'>
-                <h2>UK Coronavirus Situation</h2>
-                <h4>Infection rates and trends</h4>
-            </div>
-            
-            <div>
-                <!-- Charts -->
-                <div id="{{ids[0]}}"></div>
-
-                <!-- Number stats -->
-                <p>{{ current_moving_average }}</p>
-            </div>
-
-        </div>
-
-        <!--France column-->
-        <div class="france">
-            <!--column title-->
-            <div class='column-title'>
-                <h2>France Coronavirus Situation</h2>
-                <h4>Infection rates and trends</h4>
-            </div>
-
-        </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="https://coronavirus.data.gov.uk/details/developers-guide">Data</a>
+        </li>
+      </ul>
     </div>
-    <!--footer section-->
-    <div id="footer" class="container"></div>
+  </nav>
 
+  <!--main section-->
+  <div class="container-1">
+    <!--uk column-->
+    <div class="uk">
+      <!--column title-->
+      <div class="column-title">
+        <h2>UK Coronavirus Situation</h2>
+        <h4>Infection rates and trends</h4>
+      </div>
+
+      <div class="graph-numbers">
+        <!-- Charts -->
+        <div class="graph" id="{{ids[0]}}"></div>
+
+        <!-- Number stats -->
+        <div class="numbers">
+          <p>{{ current_cases }}</p>
+          <p>{{ previous_week_cases }}</p>
+          <p>{{ previous_month_cases }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!--France column-->
+    <div class="france">
+      <!--column title-->
+      <div class="column-title">
+        <h2>France Coronavirus Situation</h2>
+        <h4>Infection rates and trends</h4>
+      </div>
+    </div>
+  </div>
+  <!--footer section-->
+  <div id="footer" class="container"></div>
 </body>
 
-
 <footer>
-
-    <script type="text/javascript">
-        // plots the figure with id
-        // id much match the div id above in the html
-        var figures = {{ figuresJSON | safe }};
-        var ids = {{ ids | safe }};
-        for (var i in figures) {
-            Plotly.newPlot(ids[i],
-                figures[i].data,
-                figures[i].layout|| {});
-        }
-
-        // window.onresize = function () {
-        //     for (var i in figures) {Plotly.Plots.resize(ids[i]);}
-        // }
-    </script>
-
+  <script type="text/javascript">
+    // plots the figure with id
+    // id much match the div id above in the html
+    var figures = {{ figuresJSON | safe }};
+    var ids = {{ ids | safe }};
+    for (var i in figures) {
+      Plotly.newPlot(ids[i],
+        figures[i].data,
+        figures[i].layout,
+        config = {responsive: true} || {});
+    }
+  </script>
 </footer>
-
 
 </html>
