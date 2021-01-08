@@ -1,28 +1,25 @@
 html,
 body {
   height: 99%;
+  margin: 0;
 }
 
+/* Outer CSS grid arrangement and formatting */
 .outer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.2fr 0.2fr 1.5fr 1.5fr;
+  grid-template-rows: 47px 0.15fr 1.5fr 1.5fr;
   height: 100%;
   grid-template-areas:
     "navbar navbar"
     "title-uk title-fr"
     "cases-uk cases-fr"
     "deaths-uk deaths-fr";
-  gap: 1em;
+  /* gap: 1em; */
 }
 
 .outer-grid > * {
   background: #e6e6e6;
-}
-
-nav {
-  grid-area: navbar;
-  margin: 10px;
 }
 
 #title-uk {
@@ -49,12 +46,7 @@ nav {
   grid-area: deaths-fr;
 }
 
-#uk,
-#france {
-  margin: 10px;
-  border: 1px solid #333;
-}
-
+/* Inner grid arrangement and styling */
 .inner-grid {
   display: grid;
   grid-template-columns: 5fr 1fr;
@@ -65,10 +57,6 @@ nav {
     "graph number-one"
     "graph number-two"
     "graph number-three";
-}
-
-.inner-grid > * {
-  border: 1px solid blue;
 }
 
 .graph {
@@ -111,12 +99,83 @@ nav {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .inner-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 5fr 1fr;
     grid-template-areas:
       "graph graph graph"
       "number-one number-two number-three";
+  }
+}
+
+/* Text styling */
+h2,
+h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+.title {
+  padding-left: 10px;
+}
+
+.number {
+  font-size: 24px;
+}
+
+/* Top Nav */
+.topnav {
+  grid-area: navbar;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
