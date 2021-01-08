@@ -1,29 +1,122 @@
-.container-1 {
-  margin: 0 1%;
-  display: flex;
-  flex-flow: row wrap;
-  /* justify-content: space-around; */
+html,
+body {
+  height: 99%;
 }
 
-.uk,
-.france {
-  flex: 1;
-  margin: 10px;
-  border: 3px solid #333;
-  flex-basis: 45%;
-}
-
-.graph-numbers {
+.outer-grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  /* grid-auto-rows: minmax(200px, auto); */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr 1.5fr 1.5fr;
+  height: 100%;
+  grid-template-areas:
+    "navbar navbar"
+    "title-uk title-fr"
+    "cases-uk cases-fr"
+    "deaths-uk deaths-fr";
+  gap: 1em;
+}
+
+.outer-grid > * {
+  background: #e6e6e6;
+}
+
+nav {
+  grid-area: navbar;
+  margin: 10px;
+}
+
+#title-uk {
+  grid-area: title-uk;
+}
+
+#cases-uk {
+  grid-area: cases-uk;
+}
+
+#deaths-uk {
+  grid-area: deaths-uk;
+}
+
+#title-fr {
+  grid-area: title-fr;
+}
+
+#cases-fr {
+  grid-area: cases-fr;
+}
+
+#deaths-fr {
+  grid-area: deaths-fr;
+}
+
+#uk,
+#france {
+  margin: 10px;
+  border: 1px solid #333;
+}
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5em;
+  align-items: stretch;
+  grid-template-areas:
+    "graph number-one"
+    "graph number-two"
+    "graph number-three";
+}
+
+.inner-grid > * {
+  border: 1px solid blue;
 }
 
 .graph {
-  min-height: 500px;
+  grid-area: graph;
 }
 
-.numbers {
-  display: flex;
-  flex-direction: column;
+.number-one {
+  grid-area: number-one;
+  align-self: center;
+  justify-self: center;
+}
+
+.number-two {
+  grid-area: number-two;
+  align-self: center;
+  justify-self: center;
+}
+
+.number-three {
+  grid-area: number-three;
+  align-self: center;
+  justify-self: center;
+}
+
+@media (max-width: 750px) {
+  .outer-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "title-uk"
+      "cases-uk"
+      "deaths-uk"
+      "title-fr"
+      "cases-fr"
+      "deaths-fr";
+  }
+
+  .inner-grid {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .inner-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5fr 1fr;
+    grid-template-areas:
+      "graph graph graph"
+      "number-one number-two number-three";
+  }
 }

@@ -64,14 +64,14 @@ def return_figures(df):
         {
             "title": {
                 "text": "Daily New Cases",
-                # "yref": "container",
-                # "y": 0.9,
-                # "yanchor": "top",
-                # "xanchor": "left",
-                # "x": 0.1,
                 "font": {"family": "Roboto", "size": 18},
-                # "autosize": True,
-            }
+            },
+            "margin": {
+                "l": 40,
+                "r": 40,
+                "t": 65,
+                "b": 40,
+            },
         }
     )
 
@@ -79,18 +79,6 @@ def return_figures(df):
     figures.append(dict(data=graph, layout=layout))
 
     return figures
-
-
-# def get_current_numbers(df):
-
-#     current_7dayCases, current_7dayDeaths = df.loc[
-#         df.date == df.date.max(), ["7dayCases", "7dayDeaths"]
-#     ].values[0]
-
-#     formatted_7dayCases = f"{current_7dayCases:,.0f}"
-#     formatted_7dayDeaths = f"{current_7dayDeaths:,.0f}"
-
-#     return formatted_7dayCases, formatted_7dayDeaths
 
 
 def get_current_numbers(df):
