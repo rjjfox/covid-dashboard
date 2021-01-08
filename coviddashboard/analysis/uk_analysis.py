@@ -49,18 +49,27 @@ def pull_data():
 
 def return_figures(df):
 
-    graph = []
-    graph.append(go.Bar(x=df.date.tolist(), y=df.newCases.tolist(), showlegend=False))
-    graph.append(
+    cases_graph = []
+    cases_graph.append(
+        go.Bar(
+            x=df.date.tolist(),
+            y=df.newCases.tolist(),
+            name="Daily cases",
+            showlegend=False,
+            hovertemplate="%{y:,.0f}",
+        )
+    )
+    cases_graph.append(
         go.Scatter(
             x=df.date.tolist(),
             y=df["7dayCases"].tolist(),
             name="7 day moving average",
             showlegend=False,
+            hovertemplate="%{y:,.0f}",
         )
     )
 
-    layout = dict(
+    cases_layout = dict(
         {
             "title": {
                 "text": "Daily New Cases",
@@ -72,11 +81,59 @@ def return_figures(df):
                 "t": 65,
                 "b": 40,
             },
+            "hovermode": "x unified",
+            "hoverlabel": {
+                "bgcolor": "white",
+                "font_size": 16,
+                "font_family": "Roboto",
+            },
+        }
+    )
+
+    deaths_graph = []
+    deaths_graph.append(
+        go.Bar(
+            x=df.date.tolist(),
+            y=df.newDeaths.tolist(),
+            name="Daily deaths",
+            showlegend=False,
+            hovertemplate="%{y:,.0f}",
+        )
+    )
+    deaths_graph.append(
+        go.Scatter(
+            x=df.date.tolist(),
+            y=df["7dayDeaths"].tolist(),
+            name="7 day moving average",
+            showlegend=False,
+            hovertemplate="%{y:,.0f}",
+        )
+    )
+
+    deaths_layout = dict(
+        {
+            "title": {
+                "text": "Daily New Deaths",
+                "font": {"family": "Roboto", "size": 18},
+            },
+            "margin": {
+                "l": 40,
+                "r": 40,
+                "t": 65,
+                "b": 40,
+            },
+            "hovermode": "x unified",
+            "hoverlabel": {
+                "bgcolor": "white",
+                "font_size": 16,
+                "font_family": "Roboto",
+            },
         }
     )
 
     figures = []
-    figures.append(dict(data=graph, layout=layout))
+    figures.append(dict(data=cases_graph, layout=cases_layout))
+    figures.append(dict(data=deaths_graph, layout=deaths_layout))
 
     return figures
 
