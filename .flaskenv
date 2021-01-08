@@ -1,0 +1,2 @@
+FLASK_APP=coviddashboard
+FLASK_ENV=development
