@@ -9,13 +9,29 @@
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+
   <!-- css stylesheet -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}" />
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div class="outer-grid">
-    <nav>Navbar</nav>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
     <!-- UK column -->
     <div id="title-uk" class="title">
@@ -25,15 +41,15 @@
 
     <div id="cases-uk" class="inner-grid">
       <div class="graph" id="{{ids[0]}}"></div>
-      <p class="number-one">{{ current_cases }}</p>
-      <p class="number-two">{{ previous_week_cases }}</p>
-      <p class="number-three">{{ previous_month_cases }}</p>
+      <p class="number number-one">{{ uk_current_cases }}</p>
+      <p class="number number-two">{{ uk_previous_week_cases }}</p>
+      <p class="number number-three">{{ uk_previous_month_cases }}</p>
     </div>
     <div id="deaths-uk" class="inner-grid">
       <div class="graph" id="{{ids[1]}}"></div>
-      <p class="number-one">{{ current_cases }}</p>
-      <p class="number-two">{{ previous_week_cases }}</p>
-      <p class="number-three">{{ previous_month_cases }}</p>
+      <p class="number number-one">{{ uk_current_deaths }}</p>
+      <p class="number number-two">{{ uk_previous_week_deaths }}</p>
+      <p class="number number-three">{{ uk_previous_month_deaths }}</p>
     </div>
 
 
@@ -43,16 +59,16 @@
       <h4>Infection rates and trends</h4>
     </div>
     <div id="cases-fr" class="inner-grid">
-      <div class="graph"></div>
-      <p class="number-one">{{ current_cases }}</p>
-      <p class="number-two">{{ previous_week_cases }}</p>
-      <p class="number-three">{{ previous_month_cases }}</p>
+      <div class="graph" id="{{ids[2]}}"></div>
+      <p class="number number-one">{{ fr_current_cases }}</p>
+      <p class="number number-two">{{ fr_previous_week_cases }}</p>
+      <p class="number number-three">{{ fr_previous_month_cases }}</p>
     </div>
     <div id="deaths-fr" class="inner-grid">
-      <div class="graph"></div>
-      <p class="number-one">{{ current_cases }}</p>
-      <p class="number-two">{{ previous_week_cases }}</p>
-      <p class="number-three">{{ previous_month_cases }}</p>
+      <div class="graph" id="{{ids[3]}}"></div>
+      <p class="number number-one">{{ fr_current_deaths }}</p>
+      <p class="number number-two">{{ fr_previous_week_deaths }}</p>
+      <p class="number number-three">{{ fr_previous_month_deaths }}</p>
     </div>
   </div>
 
@@ -72,6 +88,15 @@
         figures[i].data,
         figures[i].layout,
         config = {responsive: true} || {});
+    }
+
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
     }
   </script>
 </footer>
