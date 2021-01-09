@@ -1,6 +1,5 @@
 html,
 body {
-  /* height: 99%; */
   margin: 0;
 }
 
@@ -9,7 +8,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 0.15fr 1.5fr 1.5fr auto;
-  height: 100%;
   grid-template-areas:
     "navbar navbar"
     "title-uk title-fr"
@@ -53,6 +51,7 @@ body {
     "graph number-one"
     "graph number-two"
     "graph number-three";
+  min-height: 400px;
 }
 
 .graph {
