@@ -15,11 +15,11 @@ body {
     "title-uk title-fr"
     "cases-uk cases-fr"
     "deaths-uk deaths-fr";
-  /* gap: 1em; */
+  gap: 1em;
 }
 
 .outer-grid > * {
-  background: #e6e6e6;
+  /* background: #e6e6e6; */
 }
 
 #title-uk {
@@ -51,7 +51,7 @@ body {
   display: grid;
   grid-template-columns: 5fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 0.5em;
+  row-gap: 0.5em;
   align-items: stretch;
   grid-template-areas:
     "graph number-one"
@@ -81,7 +81,8 @@ body {
   justify-self: center;
 }
 
-@media (max-width: 750px) {
+/* Single column layout query */
+@media (max-width: 800px) {
   .outer-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -106,10 +107,11 @@ body {
     grid-template-areas:
       "graph graph graph"
       "number-one number-two number-three";
+    margin-bottom: 5px;
   }
 }
 
-/* Text styling */
+/* ============== Text styling ============== */
 h2,
 h4 {
   font-family: "Open Sans", sans-serif;
@@ -120,14 +122,25 @@ h4 {
 }
 
 .number {
-  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Top Nav */
+.number p {
+  font-size: 0.9em;
+}
+
+.number span {
+  font-size: 1.5em;
+}
+
+/* ============== Top Nav ============== */
 .topnav {
   grid-area: navbar;
   overflow: hidden;
-  background-color: #333;
+  background-color: #003f72;
 }
 
 .topnav a {
