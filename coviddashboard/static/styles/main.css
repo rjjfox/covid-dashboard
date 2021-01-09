@@ -155,6 +155,7 @@ h4 {
   float: right;
   display: block;
   color: #f2f2f2;
+  font-weight: 600;
   text-align: center;
   padding: 13px 16px;
   text-decoration: none;
@@ -162,17 +163,21 @@ h4 {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  color: #afb5bb;
 }
 
-.topnav a.active {
-  background-color: #4caf50;
-  color: white;
-}
-
-.topnav .icon {
+.topnav .burger-icon {
   display: none;
+}
+
+.topnav .github-icon {
+  width: 25px;
+  display: block;
+  fill: #f2f2f2;
+}
+
+.topnav .github-icon:hover {
+  fill: #afb5bb;
 }
 
 @media screen and (max-width: 600px) {
@@ -183,7 +188,7 @@ h4 {
   .topnav a:not(:first-child) {
     display: none;
   }
-  .topnav a.icon {
+  .topnav a.burger-icon {
     display: block;
   }
 }
@@ -192,7 +197,7 @@ h4 {
   .topnav.responsive {
     position: relative;
   }
-  .topnav.responsive .icon {
+  .topnav.responsive .burger-icon {
     position: absolute;
     right: 0;
     top: 0;
