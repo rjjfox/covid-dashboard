@@ -1,6 +1,6 @@
 html,
 body {
-  height: 99%;
+  /* height: 99%; */
   margin: 0;
 }
 
@@ -8,7 +8,7 @@ body {
 .outer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 47px 0.15fr 1.5fr 1.5fr;
+  grid-template-rows: auto 0.15fr 1.5fr 1.5fr auto;
   height: 100%;
   grid-template-areas:
     "navbar navbar"
@@ -16,10 +16,6 @@ body {
     "cases-uk cases-fr"
     "deaths-uk deaths-fr";
   gap: 1em;
-}
-
-.outer-grid > * {
-  /* background: #e6e6e6; */
 }
 
 #title-uk {
@@ -148,19 +144,16 @@ h4 {
 }
 
 .heading {
-  margin-left: 0.5em;
-}
-
-.navigation {
-  display: flex;
-}
-
-.navigation a {
+  margin: 0;
   float: left;
+}
+
+.topnav a {
+  float: right;
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 13px 16px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -180,10 +173,14 @@ h4 {
 }
 
 @media screen and (max-width: 600px) {
-  .navigation li {
+  .topnav {
+    display: block;
+  }
+
+  .topnav a:not(:first-child) {
     display: none;
   }
-  .navigation li.icon {
+  .topnav a.icon {
     display: block;
   }
 }
@@ -197,7 +194,8 @@ h4 {
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  .topnav.responsive a,
+  .topnav.responsive h1 {
     float: none;
     display: block;
     text-align: left;
