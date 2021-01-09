@@ -147,7 +147,7 @@ def return_figures(df):
             },
             "margin": {
                 "l": 40,
-                "r": 40,
+                "r": 20,
                 "t": 65,
                 "b": 40,
             },
