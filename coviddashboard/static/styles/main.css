@@ -136,7 +136,9 @@ h4 {
 .topnav {
   grid-area: navbar;
   display: flex;
-  justify-content: space-between;
+  /* Align content right and use 
+  margin-right: auto to put h1 at left */
+  justify-content: flex-end;
   align-items: center;
   overflow: hidden;
   background-color: #003f72;
@@ -145,6 +147,7 @@ h4 {
 
 .heading {
   margin: 0;
+  margin-right: auto;
   float: left;
 }
 
