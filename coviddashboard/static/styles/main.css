@@ -7,14 +7,13 @@ body {
 .outer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 0.15fr 1.5fr 1.5fr auto;
+  grid-template-rows: 0.15fr 1.5fr 1.5fr;
   grid-template-areas:
-    "navbar navbar"
     "title-uk title-fr"
     "cases-uk cases-fr"
-    "deaths-uk deaths-fr"
-    "footer footer";
+    "deaths-uk deaths-fr";
   gap: 1em;
+  margin-top: 1em;
 }
 
 #title-uk {
@@ -82,7 +81,6 @@ body {
   .outer-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "navbar"
       "title-uk"
       "cases-uk"
       "deaths-uk"
@@ -134,7 +132,6 @@ h4 {
 
 /* ============== Top Nav ============== */
 .topnav {
-  grid-area: navbar;
   display: flex;
   /* Align content right and use 
   margin-right: auto to put h1 at left */
@@ -212,7 +209,6 @@ h4 {
 
 /* Footer */
 .site-footer {
-  grid-area: footer;
   padding-bottom: 0rem;
   color: #99999a;
   background-color: #fafafb;
