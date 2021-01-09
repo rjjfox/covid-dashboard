@@ -12,7 +12,8 @@ body {
     "navbar navbar"
     "title-uk title-fr"
     "cases-uk cases-fr"
-    "deaths-uk deaths-fr";
+    "deaths-uk deaths-fr"
+    "footer footer";
   gap: 1em;
 }
 
@@ -95,7 +96,7 @@ body {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1000px) {
   .inner-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 5fr 1fr;
@@ -207,4 +208,34 @@ h4 {
     display: block;
     text-align: left;
   }
+}
+
+/* Footer */
+.site-footer {
+  grid-area: footer;
+  padding-bottom: 0rem;
+  color: #99999a;
+  background-color: #fafafb;
+  margin-top: 2em;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.small-font {
+  font-size: 14px;
+}
+
+.site-footer .icon {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  fill: currentColor;
+  padding-left: 5px;
 }
