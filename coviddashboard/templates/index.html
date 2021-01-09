@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UK Covid 19 Situation</title>
+  <title>COVID-19 Dashboard</title>
 
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -16,6 +16,9 @@
 
   <!-- css stylesheet -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/normalize.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reset.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/typography.css') }}" />
 
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,9 +27,7 @@
 <body>
   <div class="outer-grid">
     <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
+      <h1>COVID-19 Dashboard</h1>
       <a href="#about">About</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -41,9 +42,19 @@
 
     <div id="cases-uk" class="inner-grid">
       <div class="graph" id="{{ids[0]}}"></div>
-      <p class="number number-one">{{ uk_current_cases }}</p>
-      <p class="number number-two">{{ uk_previous_week_cases }}</p>
-      <p class="number number-three">{{ uk_previous_month_cases }}</p>
+      <div class="number number-one">
+        <p>Current</p>
+        <span>{{ uk_current_cases }}</span>
+        <p>7 day average</p>
+      </div>
+      <div class="number number-two">
+        <span>{{ uk_previous_week_cases }}</span>
+        <p>vs. last week</p>
+      </div>
+      <div class="number number-three">
+        <span>{{ uk_previous_month_cases }}</span>
+        <p>vs. last month</p>
+      </div>
     </div>
     <div id="deaths-uk" class="inner-grid">
       <div class="graph" id="{{ids[1]}}"></div>
