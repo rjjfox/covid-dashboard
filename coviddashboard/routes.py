@@ -59,3 +59,13 @@ def index():
         fr_previous_month_cases=f"{fr_previous_month_cases:.0%}",
         fr_previous_month_deaths=f"{fr_previous_month_deaths:.0%}",
     )
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/data")
+def data():
+    return render_template("data.html")
