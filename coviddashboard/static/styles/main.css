@@ -139,11 +139,23 @@ h4 {
 /* ============== Top Nav ============== */
 .topnav {
   grid-area: navbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   background-color: #003f72;
+  color: #f2f2f2;
 }
 
-.topnav a {
+.heading {
+  margin-left: 0.5em;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -168,11 +180,10 @@ h4 {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
+  .navigation li {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
+  .navigation li.icon {
     display: block;
   }
 }
