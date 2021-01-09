@@ -61,9 +61,19 @@
     </div>
     <div id="deaths-uk" class="inner-grid">
       <div class="graph" id="{{ids[1]}}"></div>
-      <p class="number number-one">{{ uk_current_deaths }}</p>
-      <p class="number number-two">{{ uk_previous_week_deaths }}</p>
-      <p class="number number-three">{{ uk_previous_month_deaths }}</p>
+      <div class="number number-one">
+        <p>Current</p>
+        <span>{{ uk_current_deaths }}</span>
+        <p>7 day average</p>
+      </div>
+      <div class="number number-two">
+        <span>{{ uk_previous_week_deaths }}</span>
+        <p>vs. last week</p>
+      </div>
+      <div class="number number-three">
+        <span>{{ uk_previous_month_deaths }}</span>
+        <p>vs. last month</p>
+      </div>
     </div>
 
 
@@ -74,15 +84,35 @@
     </div>
     <div id="cases-fr" class="inner-grid">
       <div class="graph" id="{{ids[2]}}"></div>
-      <p class="number number-one">{{ fr_current_cases }}</p>
-      <p class="number number-two">{{ fr_previous_week_cases }}</p>
-      <p class="number number-three">{{ fr_previous_month_cases }}</p>
+      <div class="number number-one">
+        <p>Current</p>
+        <span>{{ fr_current_cases }}</span>
+        <p>7 day average</p>
+      </div>
+      <div class="number number-two">
+        <span>{{ fr_previous_week_cases }}</span>
+        <p>vs. last week</p>
+      </div>
+      <div class="number number-three">
+        <span>{{ fr_previous_month_cases }}</span>
+        <p>vs. last month</p>
+      </div>
     </div>
     <div id="deaths-fr" class="inner-grid">
       <div class="graph" id="{{ids[3]}}"></div>
-      <p class="number number-one">{{ fr_current_deaths }}</p>
-      <p class="number number-two">{{ fr_previous_week_deaths }}</p>
-      <p class="number number-three">{{ fr_previous_month_deaths }}</p>
+      <div class="number number-one">
+        <p>Current</p>
+        <span>{{ fr_current_deaths }}</span>
+        <p>7 day average</p>
+      </div>
+      <div class="number number-two">
+        <span>{{ fr_previous_week_deaths }}</span>
+        <p>vs. last week</p>
+      </div>
+      <div class="number number-three">
+        <span>{{ fr_previous_month_deaths }}</span>
+        <p>vs. last month</p>
+      </div>
     </div>
   </div>
 
