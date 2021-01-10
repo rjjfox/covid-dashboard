@@ -3,6 +3,12 @@ body {
   margin: 0;
 }
 
+/* ============== Body CSS Grid ============== */
+.body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 /* ============== Outer CSS grid arrangement and formatting ============== */
 .outer-grid {
   display: grid;
