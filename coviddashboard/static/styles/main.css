@@ -1,12 +1,27 @@
 html,
 body {
   margin: 0;
+  height: 100%;
 }
 
 /* ============== Body CSS Grid ============== */
-.body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.topnav {
+  flex-shrink: 0;
+}
+
+.outer-grid,
+.container {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
 }
 
 /* ============== Outer CSS grid arrangement and formatting ============== */

@@ -84,25 +84,15 @@
 </div>
 
 <script type="text/javascript">
-    // plots the figure with id
-    // id much match the div id above in the html
-    var figures = {{ figuresJSON | safe }};
-    var ids = {{ ids | safe }};
-    for (var i in figures) {
-      Plotly.newPlot(ids[i],
-        figures[i].data,
-        figures[i].layout,
-        config = {responsive: true} || {});
-    }
-
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-  </script>
-
+  // plots the figure with id
+  // id much match the div id above in the html
+  var figures = {{ figuresJSON | safe }};
+  var ids = {{ ids | safe }};
+  for (var i in figures) {
+    Plotly.newPlot(ids[i],
+      figures[i].data,
+      figures[i].layout,
+      config = {responsive: true} || {});
+  }
+</script>
 {% endblock %}
