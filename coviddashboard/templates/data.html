@@ -1,7 +1,52 @@
 {% extends 'base.html' %}
 
-{% block title %}About{% endblock %}
-
 {% block content %}
+
+<div class="container">
+    <h1>{% block title %}Data{% endblock %}</h1>
+    <p>
+        There are hundreds of dashboards being produced all over the world by everyone who can be bothered to make one.
+        With a wealth of potential data sources out there, I chose two that were adequately reliable.
+    </p>
+    <ul>
+        <li>
+            <a href="https://coronavirus.data.gov.uk/details/developers-guide"><b>UK Government COVID-19 API</b></a> -
+            timely and granular data is provided through a simple and free-to-use API. The limits to using the API are
+            completely reasonable and the documentation clear enough that it was no problem leveraging this API.
+        </li>
+        <li>
+            <a href="https://covid19.who.int/"><b>WHO</b></a> - supplying the French side of the data, the WHO produces
+            worldwide health data alongside a beautiful visual dashboard. The WHO provide a CSV download link that can
+            be fed straight into a python script.
+        </li>
+    </ul>
+
+    <h2>Other notable data sources and dashboards</h2>
+    <ul>
+        <li>
+            <a href="https://www.worldometers.info/coronavirus/"><b>Worldometers</b></a> - this was one of the first
+            places I found personally to see daily and cumulative numbers for cases/deaths across the world. With a
+            seemingly large team working to ensure that the data is correct and trustworthy, this has been my primary
+            source for keeping up to date.
+        </li>
+        <li>
+            <a href="https://coronavirus.data.gov.uk/"><b>Official UK Government Site</b></a> - not only do they provide
+            an easy to use API but with great documentation, the UK government data team have also produced a display of
+            figures and trends that are exactly what I need to see to understand where we're heading, i.e in or out of
+            lockdown, going up or down a wave. I found this dashboard after I had created my own and subsequently stole
+            a couple of things from it.
+        </li>
+        <li>
+            <a href="https://www.ecdc.europa.eu/en/covid-19/data"><b>ECDC</b></a> - for previous analysis of the
+            COVID-19 pandemic, I have used datasets from the European Centre for Disease Prevention and Control.
+            However, they have lately switched to a weekly reporting schedule which doesn't suit my needs.
+        </li>
+        <li>
+            <a href="https://coronavirus.jhu.edu/map.html"><b>John Hopkins University</b></a> - US centric but with
+            great vizualisations of the situation across the world. I love the
+        </li>
+    </ul>
+
+</div>
 
 {% endblock %}
