@@ -3,7 +3,7 @@ body {
   margin: 0;
 }
 
-/* Outer CSS grid arrangement and formatting */
+/* ============== Outer CSS grid arrangement and formatting ============== */
 .outer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -40,7 +40,7 @@ body {
   grid-area: deaths-fr;
 }
 
-/* Inner grid arrangement and styling */
+/* ============== Inner grid arrangement and styling ============== */
 .inner-grid {
   display: grid;
   grid-template-columns: 5fr 1fr;
@@ -76,7 +76,7 @@ body {
   justify-self: center;
 }
 
-/* Single column layout query */
+/* ============== Single column layout query ============== */
 @media (max-width: 800px) {
   .outer-grid {
     grid-template-columns: 1fr;
@@ -207,7 +207,7 @@ h4 {
   }
 }
 
-/* Footer */
+/* ============== Footer ============== */
 .site-footer {
   padding-bottom: 0rem;
   color: #99999a;
@@ -234,4 +234,50 @@ h4 {
   overflow: hidden;
   fill: currentColor;
   padding-left: 5px;
+}
+
+/* ============== Info pages ============== */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border: 1px dashed #eeeeee;
+}
+
+@media screen and (min-width: 781px) {
+  .container {
+    width: 90%;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (min-width: 401px) {
+  .container {
+    width: 100%;
+    padding: 32px 32px;
+  }
+}
+
+.container p {
+  margin-bottom: 1.25em;
+}
+
+.container h2 {
+  margin: 2.2em 0 1em;
+}
+
+.container li {
+  margin: 1em 0;
+}
+
+.container a {
+  color: #3ca4ff;
+}
+
+.container a:hover {
+  color: #378ad3;
 }
