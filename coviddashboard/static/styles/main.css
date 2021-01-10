@@ -34,7 +34,7 @@ body {
     "cases-uk cases-fr"
     "deaths-uk deaths-fr";
   gap: 1em;
-  margin-top: 1em;
+  margin: 1em;
 }
 
 #title-uk {
