@@ -84,6 +84,18 @@
 </div>
 
 <script type="text/javascript">
+  // Look at device type before defining the config
+  function setPlotlyConfig(x) {
+    if (x.matches) { // If media query matches
+      config = {responsive: true, displayModeBar: false};
+    } else {
+      config = {responsive: true};
+    }
+    return config;
+  }
+  var lessThan700 = window.matchMedia("(max-width: 700px)")
+  plotly_config = setPlotlyConfig(lessThan700)
+  
   // plots the figure with id
   // id much match the div id above in the html
   var figures = {{ figuresJSON | safe }};
@@ -92,7 +104,7 @@
     Plotly.newPlot(ids[i],
       figures[i].data,
       figures[i].layout,
-      config = {responsive: true} || {});
+      config = plotly_config || {});
   }
 </script>
 {% endblock %}
