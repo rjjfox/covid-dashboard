@@ -2,6 +2,8 @@
 
 A data dashboard giving a snapshot of the COVID-19 situation in the UK and France. Built with Python using Flask and Plotly and hosted on Heroku as a web app. See it live [here](https://covid-dashboard-rfox.herokuapp.com/).
 
+![screenshot](screenshot.jpg)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
