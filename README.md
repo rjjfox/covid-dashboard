@@ -55,7 +55,7 @@ Use the same project name as the one you created. If successful, you can then go
 ## Built With
 
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The web application framework used
-- [Plotly](https://plotly.com/python/) - For data vizualisation
+- [Plotly](https://plotly.com/python/) - For data visualization
 - [UK Government COVID-19 API](https://coronavirus.data.gov.uk/details/developers-guide) - For UK data
 - [WHO Data](https://covid19.who.int/) - For France data
 - [Heroku](https://heroku.com/) - Cloud platform used for deployment
