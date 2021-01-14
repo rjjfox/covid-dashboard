@@ -116,6 +116,7 @@ def return_figures(df):
                 "font_size": 16,
                 "font_family": "Roboto",
             },
+            "yaxis": {"fixedrange": True},
         }
     )
 
@@ -157,6 +158,7 @@ def return_figures(df):
                 "font_size": 16,
                 "font_family": "Roboto",
             },
+            "yaxis": {"fixedrange": True},
         }
     )
 
