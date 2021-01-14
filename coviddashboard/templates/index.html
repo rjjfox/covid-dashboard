@@ -116,15 +116,24 @@
   var divs = [figure_0, figure_1, figure_2, figure_3];
 
   function relayout(ed, divs) {
+    if (Object.entries(ed).length === 0) {return;}
     divs.forEach((div, i) => {
       let x = div.layout.xaxis;
       if (ed["xaxis.autorange"] && x.autorange) return;
-      if (x.range[0] != ed["xaxis.range[0]"] || x.range[1] != ed["xaxis.range[1]"])
-        Plotly.relayout(div, ed);
+      if (x.range[0] != ed["xaxis.range[0]"] ||x.range[1] != ed["xaxis.range[1]"])
+        {
+          var update = {
+            'xaxis.range[0]': ed["xaxis.range[0]"],
+            'xaxis.range[1]': ed["xaxis.range[1]"],
+            'xaxis.autorange': ed["xaxis.autorange"],
+          };
+          Plotly.relayout(div, update);
+        }
     });
   }
 
-  divs.forEach(div => {
+  var plots = [figure_0, figure_1, figure_2, figure_3];
+  plots.forEach(div => {
     div.on("plotly_relayout", function(ed) {
       relayout(ed, divs);
     });
