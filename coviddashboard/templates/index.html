@@ -106,5 +106,28 @@
       figures[i].layout,
       config = plotly_config || {});
   }
+
+  // Synchronise zoom between the plots on interaction
+  var figure_0 = document.getElementById('figure-0');
+  var figure_1 = document.getElementById('figure-1');
+  var figure_2 = document.getElementById('figure-2');
+  var figure_3 = document.getElementById('figure-3');
+
+  var divs = [figure_0, figure_1, figure_2, figure_3];
+
+  function relayout(ed, divs) {
+    divs.forEach((div, i) => {
+      let x = div.layout.xaxis;
+      if (ed["xaxis.autorange"] && x.autorange) return;
+      if (x.range[0] != ed["xaxis.range[0]"] || x.range[1] != ed["xaxis.range[1]"])
+        Plotly.relayout(div, ed);
+    });
+  }
+
+  divs.forEach(div => {
+    div.on("plotly_relayout", function(ed) {
+      relayout(ed, divs);
+    });
+  });
 </script>
 {% endblock %}
