@@ -1,6 +1,6 @@
 # COVID-19 Dashboard
 
-A data dashboard giving a snapshot of the COVID-19 situation in the UK and France. Built with Python using Flask and Plotly and hosted on Heroku as a web app. See it live [here](https://ryanfox212.pythonanywhere.com/).
+A data dashboard giving a snapshot of the COVID-19 situation in the UK and France. Built with Python using Flask and Plotly and hosted on Heroku as a web app. See it live [here](https://coviddashboard.rfoxdata.co.uk/).
 
 ![screenshot](screenshot.jpg)
 
@@ -41,9 +41,13 @@ After running `flask run`, you will be given a local address to see the web app 
 
 ## Deployment
 
+### PythonAnywhere
+
+I'm using [PythonAnywhere](https://www.pythonanywhere.com/)'s free tier to host this site. See their simple guide to ["Setting up Flask applications on PythonAnywhere"](https://help.pythonanywhere.com/pages/Flask/).
+
 ### Heroku
 
-I utilised Heroku's free tier to host the web app. To do the same, create a project on Heroku's website and then I recommend linking the project to a Github repository in the Deploy section.
+A Procfile for the app has already been created for this repo if you would like to deploy to Heroku. Therefore simply, create a project on [Heroku's website](https://heroku.com/). For the next step, I recommend linking the project to a Github repository in the Deploy section. This can be setup through the website.
 
 Alternatively, you can use the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli). Provided you have already created a project on the site, use
 
@@ -53,10 +57,6 @@ git push heroku master
 ```
 
 Use the same project name as the one you created. If successful, you can then go to `https://[project-name].herokuapp.com/`.
-
-### PythonAnywhere
-
-You can also utilise [PythonAnywhere](https://www.pythonanywhere.com/). See their simple guide to ["Setting up Flask applications on PythonAnywhere"](https://help.pythonanywhere.com/pages/Flask/).
 
 ## Built With
 
