@@ -6,22 +6,22 @@
 
 <div class="vaccination-grid">
 
-    <div class="graph" id="{{ids[0]}}"></div>
+  <div class="graph" id="{{ids[0]}}"></div>
 
-    <div class="number">
-        <span>{{ firstDoseTotal }}</span>
-        <p>Total First Doses</p>
-    </div>
-    <div class="number">
-        <span>{{ secondDoseTotal }}</span>
-        <p>Total Second Doses</p>
-    </div>
-    <div class="number">
-        <p>Current</p>
-        <span>{{ rate }}</span>
-        <p>7-day average</p>
-        <p class="small">(either dose)</p>
-    </div>
+  <div class="number">
+    <span>{{ firstDoseTotal }}</span>
+    <p>Total First Doses</p>
+  </div>
+  <div class="number">
+    <span>{{ secondDoseTotal }}</span>
+    <p>Total Second Doses</p>
+  </div>
+  <div class="number">
+    <p>Current Vaccination Rate</p>
+    <span>{{ rate }}</span>
+    <p>vaccinations per day</p>
+    <p class="small">(7-day moving average, incl. first and second doses)</p>
+  </div>
 
 </div>
 

@@ -53,7 +53,7 @@ def return_vax_figures(df):
         go.Scatter(
             x=df.date.tolist(),
             y=df["7dayTotal"].tolist(),
-            name="7 day moving average",
+            name="7-day moving average<br>(incl. first and second doses)",
             hovertemplate="%{y:,.0f}",
         )
     )
