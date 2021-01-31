@@ -233,7 +233,7 @@ h4 {
   padding-bottom: 0rem;
   color: #99999a;
   background-color: #fafafb;
-  margin-top: 2em;
+  margin-top: auto;
 }
 
 .footer {
@@ -301,4 +301,38 @@ h4 {
 
 .container a:hover {
   color: #378ad3;
+}
+
+/* ============== Vaccination page ============== */
+
+.vaccination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  margin: 1em auto;
+}
+
+.vaccination-grid .graph {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+.vaccination-grid .number {
+  align-self: center;
+  justify-self: center;
+}
+
+.vaccination-grid .number p.small {
+  font-size: 0.8em;
+  color: #657388;
+}
+.small {
+  font-size: 0.7em;
+  color: #657388;
+}
+
+@media screen and (max-width: 600px) {
+  .vaccination-grid {
+    width: 98%;
+  }
 }

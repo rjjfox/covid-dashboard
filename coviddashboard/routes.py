@@ -8,6 +8,11 @@ from coviddashboard.analysis.country_analysis import (
     get_current_numbers,
     compare_against_n_days_ago,
 )
+from coviddashboard.analysis.uk_vaccinations import (
+    get_vax_data,
+    return_vax_figures,
+    get_current_vaccinations,
+)
 
 
 @app.route("/")
@@ -58,6 +63,30 @@ def index():
         fr_previous_week_deaths=f"{fr_previous_week_deaths:.0%}",
         fr_previous_month_cases=f"{fr_previous_month_cases:.0%}",
         fr_previous_month_deaths=f"{fr_previous_month_deaths:.0%}",
+    )
+
+
+@app.route("/vaccinations")
+def vaccinations():
+
+    uk_vax_df = get_vax_data()
+    vax_figures = return_vax_figures(uk_vax_df)
+
+    # plot ids for the html id tag
+    vax_ids = [f"figure-{i}" for i, _ in enumerate(vax_figures)]
+
+    # Convert the plotly figures to JSON for javascript in html template
+    vax_figuresJSON = json.dumps(vax_figures, cls=plotly.utils.PlotlyJSONEncoder)
+
+    firstDoseTotal, secondDoseTotal, rate = get_current_vaccinations(uk_vax_df)
+
+    return render_template(
+        "vaccinations.html",
+        ids=vax_ids,
+        figuresJSON=vax_figuresJSON,
+        firstDoseTotal=f"{firstDoseTotal:,.0f}",
+        secondDoseTotal=f"{secondDoseTotal:,.0f}",
+        rate=f"{rate:,.0f}",
     )
 
 

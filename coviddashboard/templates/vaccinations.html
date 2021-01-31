@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Vaccinations{% endblock %}
+
+{% block content %}
+
+<div class="vaccination-grid">
+
+    <div class="graph" id="{{ids[0]}}"></div>
+
+    <div class="number">
+        <span>{{ firstDoseTotal }}</span>
+        <p>Total First Doses</p>
+    </div>
+    <div class="number">
+        <span>{{ secondDoseTotal }}</span>
+        <p>Total Second Doses</p>
+    </div>
+    <div class="number">
+        <p>Current</p>
+        <span>{{ rate }}</span>
+        <p>7-day average</p>
+        <p class="small">(either dose)</p>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+  // Look at device type before defining the config
+  function setPlotlyConfig(x) {
+    if (x.matches) { // If media query matches
+      config = {responsive: true, displayModeBar: false};
+    } else {
+      config = {responsive: true};
+    }
+    return config;
+  }
+  var lessThan700 = window.matchMedia("(max-width: 700px)")
+  plotly_config = setPlotlyConfig(lessThan700)
+  
+  // plots the figure with id
+  // id much match the div id above in the html
+  var figures = {{ figuresJSON | safe }};
+  var ids = {{ ids | safe }};
+  for (var i in figures) {
+    Plotly.newPlot(ids[i],
+      figures[i].data,
+      figures[i].layout,
+      config = plotly_config || {});
+  }
+</script>
+
+{% endblock %}
