@@ -198,7 +198,7 @@ h4 {
   fill: #afb5bb;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav {
     display: block;
   }
@@ -209,9 +209,7 @@ h4 {
   .topnav a.burger-icon {
     display: block;
   }
-}
 
-@media screen and (max-width: 600px) {
   .topnav.responsive {
     position: relative;
   }
