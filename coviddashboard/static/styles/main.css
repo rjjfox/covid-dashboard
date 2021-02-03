@@ -79,6 +79,18 @@ body {
   grid-area: graph;
 }
 
+.number i {
+  margin-right: 5px;
+}
+
+.number i.fa-caret-down {
+  color: green;
+}
+
+.number i.fa-caret-up {
+  color: red;
+}
+
 .number-one {
   grid-area: number-one;
   align-self: center;

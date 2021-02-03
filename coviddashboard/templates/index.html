@@ -18,11 +18,25 @@
       <p>7 day average</p>
     </div>
     <div class="number number-two">
-      <span>{{ uk_previous_week_cases }}</span>
+      {% set num = uk_previous_week_cases %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last week</p>
     </div>
     <div class="number number-three">
-      <span>{{ uk_previous_month_cases }}</span>
+      {% set num = uk_previous_month_cases %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last month</p>
     </div>
   </div>
@@ -34,11 +48,25 @@
       <p>7 day average</p>
     </div>
     <div class="number number-two">
-      <span>{{ uk_previous_week_deaths }}</span>
+      {% set num = uk_previous_week_deaths %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last week</p>
     </div>
     <div class="number number-three">
-      <span>{{ uk_previous_month_deaths }}</span>
+      {% set num = uk_previous_month_deaths %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last month</p>
     </div>
   </div>
@@ -57,11 +85,25 @@
       <p>7 day average</p>
     </div>
     <div class="number number-two">
-      <span>{{ fr_previous_week_cases }}</span>
+      {% set num = fr_previous_week_cases %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last week</p>
     </div>
     <div class="number number-three">
-      <span>{{ fr_previous_month_cases }}</span>
+      {% set num = fr_previous_month_cases %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last month</p>
     </div>
   </div>
@@ -73,11 +115,25 @@
       <p>7 day average</p>
     </div>
     <div class="number number-two">
-      <span>{{ fr_previous_week_deaths }}</span>
+      {% set num = fr_previous_week_deaths %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last week</p>
     </div>
     <div class="number number-three">
-      <span>{{ fr_previous_month_deaths }}</span>
+      {% set num = fr_previous_month_deaths %}
+      {% if num > -0.05 and num < 0.05 %}
+      <span>No Change</span>
+      {% elif num > 0.05 %}
+      <span><i class="fas fa-caret-up"></i>{{ "{:.0%}".format(num) }}</span>
+      {% else %}
+      <span><i class="fas fa-caret-down"></i>{{ "{:.0%}".format(num|abs) }}</span>
+      {% endif %}
       <p>vs. last month</p>
     </div>
   </div>
