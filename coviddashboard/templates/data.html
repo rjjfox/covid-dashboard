@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
+{% block title %}Data -{% endblock %}
+
 {% block content %}
 
 <div class="container">
-    <h1>{% block title %}Data - {% endblock %}</h1>
+    <h1>Data</h1>
     <p>
         There are hundreds of dashboards being produced all over the world by everyone who can be bothered to make one.
         With a wealth of potential data sources out there, I chose two that were adequately reliable.
@@ -43,7 +45,11 @@
         </li>
         <li>
             <a href="https://coronavirus.jhu.edu/map.html"><b>John Hopkins University</b></a> - US centric but with
-            great vizualisations of the situation across the world. I love the
+            great vizualisations of the situation across the world.
+        </li>
+        <li>
+            <a href="https://github.com/owid/covid-19-data/tree/master/public/data"><b>Our World in Data</b></a> -
+            Straightforward CSVs updated daily with a wealth of different metrics.
         </li>
     </ul>
 
