@@ -78,7 +78,9 @@ def vaccinations():
     # Convert the plotly figures to JSON for javascript in html template
     vax_figuresJSON = json.dumps(vax_figures, cls=plotly.utils.PlotlyJSONEncoder)
 
-    firstDoseTotal, secondDoseTotal, rate = get_current_vaccinations(uk_vax_df)
+    firstDoseTotal, secondDoseTotal, thirdDoseTotal, rate = get_current_vaccinations(
+        uk_vax_df
+    )
 
     return render_template(
         "vaccinations.html",
@@ -86,6 +88,7 @@ def vaccinations():
         figuresJSON=vax_figuresJSON,
         firstDoseTotal=f"{firstDoseTotal:,.0f}",
         secondDoseTotal=f"{secondDoseTotal:,.0f}",
+        thirdDoseTotal=f"{thirdDoseTotal:,.0f}",
         rate=f"{rate:,.0f}",
     )
 

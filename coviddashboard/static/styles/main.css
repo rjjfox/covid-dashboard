@@ -316,21 +316,30 @@ h4 {
 /* ============== Vaccination page ============== */
 
 .vaccination-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(1, 1fr); */
   width: 90%;
   margin: 1em auto;
   gap: 1em;
 }
 
 .vaccination-grid .graph {
-  grid-column: 1/4;
+  grid-column: 1/5;
   grid-row: 1/2;
 }
 
 .vaccination-grid .number {
   align-self: center;
   justify-self: center;
+  min-width: 200px;
+  flex-grow: 1;
+  margin-bottom: 2em;
+}
+
+.number-grid {
+  display: flex;
+  justify-content: flex-around;
+  flex-wrap: wrap;
 }
 
 .vaccination-grid .number p.small {
